@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rise.gateway.dao.route.SysFiltersMapper">
+    <resultMap id="BaseMapper" type="com.rise.gateway.model.route.SysFilters">
+        <id column="id" property="id" />
+        <result column="route_id" property="routeId" />
+        <result column="sort" property="sort" />
+        <result column="args" property="args" />
+        <result column="filter_name" property="filterName" />
+        <result column="version" property="version" />
+        <result column="deleted" property="deleted" />
+        <result column="create_time" property="createTime" />
+        <result column="create_by" property="createBy" />
+        <result column="update_time" property="updateTime" />
+        <result column="update_by" property="updateBy" />
+        <result column="tenant_id" property="tenantId" />
+    </resultMap>
+
+
+    <select id="queryByRouteIds" resultMap="BaseMapper" parameterType="java.util.List">
+      select
+        *
+        from sys_filters
+        where
+        deleted = 0
+        and route_id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </select>
+</mapper>

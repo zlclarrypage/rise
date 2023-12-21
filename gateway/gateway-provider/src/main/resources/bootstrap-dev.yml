@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: aad4d7c3-5671-4c38-8a5b-1c74894ca50b
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: aad4d7c3-5671-4c38-8a5b-1c74894ca50b
+        group: DEFAULT_GROUP
+        file-extension: yml
+        #读取多个配置文件
+        ext-config:
+          - dataId: xxx-dev.yml
+            group: DEFAULT_GROUP
+            refresh: true

@@ -3,16 +3,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.rise</groupId>
-    <artifactId>rise-parent</artifactId>
+    <artifactId>rise</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>rise-parent</name>
+    <name>rise</name>
     <description></description>
     <packaging>pom</packaging>
     <properties>
         <java.version>1.8</java.version>
     </properties>
     <modules>
-
+        <module>common</module>
+        <module>gateway</module>
+        <module>authorize</module>
     </modules>
 
 </project>
