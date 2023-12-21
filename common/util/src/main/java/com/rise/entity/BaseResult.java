@@ -17,7 +17,7 @@ public class BaseResult<T> {
     private String message;
     private T data;
 
-    public BaseResult<T> success () {
+    public BaseResult success () {
         this.code = 200;
         this.message = "请求成功";
         return this;
@@ -27,6 +27,13 @@ public class BaseResult<T> {
         this.code = 200;
         this.message = "请求成功";
         this.data = data;
+        return this;
+    }
+
+
+    public BaseResult error () {
+        this.code = 500;
+        this.message = "请求失败";
         return this;
     }
 }

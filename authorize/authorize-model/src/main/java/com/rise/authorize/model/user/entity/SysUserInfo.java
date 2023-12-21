@@ -16,7 +16,6 @@ import java.util.Map;
  * @Email zhanglichang99@gmail.com
  */
 
-@Data
 public class SysUserInfo extends User {
     /**
      * 用户id
@@ -26,6 +25,16 @@ public class SysUserInfo extends User {
      * 租户ID
      */
     private final String tenantId;
+
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public String getTenantId() {
+        return tenantId;
+    }
+
 
 
     // 模拟数据库存储的用户信息

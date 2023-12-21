@@ -3,9 +3,8 @@ package com.rise.authorize.service.user;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.rise.authorize.model.user.entity.SysUser;
-import com.rise.common.entity.BaseResult;
-import com.rise.common.entity.QueryPage;
-import org.springframework.stereotype.Service;
+import com.rise.entity.BaseResult;
+import com.rise.entity.QueryPage;
 
 /**
  * <p>

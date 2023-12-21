@@ -23,7 +23,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 
 @Configuration
-//@EnableWebSecurity
+@EnableWebSecurity
 public class RiseSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private RiseUserDetailsService riseUserDetailsService;

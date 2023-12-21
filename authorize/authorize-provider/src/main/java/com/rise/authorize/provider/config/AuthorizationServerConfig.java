@@ -32,7 +32,7 @@ import java.util.List;
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
     private final AuthenticationManager authenticationManager;
     private final PasswordEncoder passwordEncoder;
-    private final TokenStore redisTokenStore;
+    //private final TokenStore redisTokenStore;
     private final TokenEnhancer jwtTokenEnhancer;
     private final JwtAccessTokenConverter jwtAccessTokenConverter;
 
@@ -42,9 +42,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
         //获取自定义tokenGranter
         TokenGranter tokenGranter = RiseTokenGranter.getTokenGranter(authenticationManager, endpoints);
-        endpoints.tokenStore(redisTokenStore)
+        /*endpoints.tokenStore(redisTokenStore)
                 .authenticationManager(authenticationManager)
-                .tokenGranter(tokenGranter);
+                .tokenGranter(tokenGranter);*/
         // 扩展token返回结果
         if (jwtAccessTokenConverter != null && jwtTokenEnhancer != null) {
             TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();

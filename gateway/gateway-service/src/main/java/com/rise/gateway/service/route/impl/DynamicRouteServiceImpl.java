@@ -28,6 +28,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.util.UriComponentsBuilder;
 import reactor.core.publisher.Mono;
+
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.net.URI;
 import java.util.ArrayList;
@@ -203,6 +205,7 @@ public class DynamicRouteServiceImpl implements ApplicationEventPublisherAware {
     /**
      * 定时刷新路由
      */
+    @PostConstruct
     public void refresh () {
         List<SysRoute> sysRouteList = sysRouteService.list();
         //查询断言与过滤器

@@ -6,10 +6,9 @@ import com.rise.authorize.dao.user.SysUserMapper;
 import com.rise.authorize.model.user.entity.SysUser;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.rise.authorize.service.user.SysUserService;
-import com.rise.common.entity.BaseResult;
-import com.rise.common.entity.QueryPage;
-import com.rise.common.entity.StatusEnum;
-import com.rise.common.util.StringUtil;
+import com.rise.entity.BaseResult;
+import com.rise.entity.QueryPage;
+import com.rise.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,9 +46,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         if (flag) {
             return result.success();
         } else {
-            result.setCode(StatusEnum.UPDATE_VERSION_ERROR.getCode());
-            result.setMessage(StatusEnum.UPDATE_VERSION_ERROR.getMessage());
-            return result;
+            return result.error();
         }
     }
 
@@ -92,9 +89,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         if (num != 0) {
             return result.success();
         } else {
-            result.setCode(StatusEnum.NO_RECORD_ERROR.getCode());
-            result.setMessage(StatusEnum.NO_RECORD_ERROR.getMessage());
-            return result;
+            return result.error();
         }
     }
 
